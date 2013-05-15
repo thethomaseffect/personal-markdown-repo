@@ -9,17 +9,13 @@ We wish to formally specify the cursor control operation of a basic text editor 
 
 ### Variables
 
-***nCol*** - The horizontal position of the cursor relative to the screen width. It can never be greater than mWinCol.
+* ***nTopLin*** - Used to denote screen position. Increments when scrolling down and decrements when scrolling up.
+* ***nDocLin*** - Bottom line of document
+* ***nCol*** - The horizontal position of the cursor relative to the screen width. It can never be greater than mWinCol.
+* ***ndCol*** - The horizontal position of the cursor relative to the document. Since there is no horizontal scroll, it is always the same as nCol.
+* ***nLin*** - Current line on screen relative to screen position. It cannot be greater than mWinLin.
+* ***ndLin*** - Current line on the document independent of screen position. Cannot be greater than nDocLin.
 
-***nDocLin*** - Bottom line of document
-
-***ndCol*** - The horizontal position of the cursor relative to the document. Since there is no horizontal scroll, it is always the same as nCol.
-
-***nLin*** - Current line on screen relative to screen position. It cannot be greater than mWinLin.
-
-***ndLin*** - Current line on the document independent of screen position. Cannot be greater than nDocLin.
-
-***nTopLin*** - Used to denote screen position. Increments when scrolling down and decrements when scrolling up.
 
 ### Pre and Post Conditions
 

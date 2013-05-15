@@ -63,7 +63,7 @@ We wish to formally specify the cursor control operation of a basic text editor 
 ```python
 nLin < mWinLin            // Not at bottom of screen
 ndLin > nDocLin           // Not at bottom of document
-LenLin(ndLin + 1) >= nCol  // Text in line below
+LenLin(ndLin + 1) >= nCol // Text in line below
 nTopLin = nTopLin         // No Scroll
 nLin = nLin + 1           // Go down one line
 nCol = nCol               // No change
@@ -83,7 +83,7 @@ nCol = LenLin(ndLin + 1)  // Move to end of line below
 ```python
 nLin = mWinLin            // At bottom of screen
 ndLin > nDocLin           // Not at bottom of document
-LenLin(ndLin + 1) >= nCol  // Text in line below
+LenLin(ndLin + 1) >= nCol // Text in line below
 nTopLin = nTopLin + 1     // Scroll down screen
 nLin = nLin               // No change
 nCol = nCol               // No change

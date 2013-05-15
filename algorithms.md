@@ -49,8 +49,12 @@ If you're worried you missed a step, the total final moves is always 2 to the po
 
 ## List Keywords and common representations
 
+* [] - Empty list
+* : - Compound operator, joins two things together eg. [1,2]:[3] -> [1,2,3] and [1,2,3]:4 -> [1,2,3,4]
 * hd - Returns the first item in a list eg. hd[1,2,3] -> 1
 * lst - Returns the last item in a list eg. tl[1,2,3] -> 3
 * tl - Takes a list and returns it without it's first item eg. lst[1,2,3] -> [2,3]
 * init - Takes a list and returns it without it's last item eg. lst[1,2,3] -> [1,2]
 * # - Returns the length of a list eg. #[1,2,3] -> 3
+
+Lists are denoted using uppercase and elements lowercase.

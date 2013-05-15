@@ -57,61 +57,75 @@ We wish to formally specify the cursor control operation of a basic text editor 
 
 ### Down Key
 
+***NOTE:**** Any assignments should have a ' sybol on the left side of the assignment in the exam. I've left this out below so it doesn't screw with markdown's syntax highlighting.
+
 #### Normal
-* nLin < mWinLin           // Not at bottom of screen
-* ndLin > nDocLin          // Not at bottom of document
-* LenLin(ndLin + 1) ≥ nCol // Text in line below
-* nTopLin' = nTopLin       // No Scroll
-* nLin' = nLin + 1         // Go down one line
-* nCol' = nCol             // No change
+```python
+nLin < mWinLin            // Not at bottom of screen
+ndLin > nDocLin           // Not at bottom of document
+LenLin(ndLin + 1) ≥ nCol  // Text in line below
+nTopLin = nTopLin         // No Scroll
+nLin = nLin + 1           // Go down one line
+nCol = nCol               // No change
+```
 
 #### No Text Directly Below
-* nLin < mWinLin           // Not at bottom of screen
-* ndLin > nDocLin          // Not at bottom of document
-* LenLin(ndLin + 1) < nCol // No Text Directly Below Cursor
-* nTopLin' = nTopLin       // No Scroll
-* nLin' = nLin + 1         // Go down one line
-* nCol' = LenLin(ndLin + 1)// Move to end of line below
+```python
+nLin < mWinLin            // Not at bottom of screen
+ndLin > nDocLin           // Not at bottom of document
+LenLin(ndLin + 1) < nCol  // No Text Directly Below Cursor
+nTopLin = nTopLin         // No Scroll
+nLin = nLin + 1           // Go down one line
+nCol = LenLin(ndLin + 1)  // Move to end of line below
+```
 
 #### Bottom of Screen, Text below
-* nLin = mWinLin           // At bottom of screen
-* ndLin > nDocLin          // Not at bottom of document
-* LenLin(ndLin + 1) ≥ nCol // Text in line below
-* nTopLin' = nTopLin + 1   // Scroll down screen
-* nLin' = nLin             // No change
-* nCol' = nCol             // No change
+```python
+nLin = mWinLin            // At bottom of screen
+ndLin > nDocLin           // Not at bottom of document
+LenLin(ndLin + 1) ≥ nCol  // Text in line below
+nTopLin = nTopLin + 1     // Scroll down screen
+nLin = nLin               // No change
+nCol = nCol               // No change
+```
 
 #### Bottom of Screen, No Text Below
-* nLin = mWinLin           // At bottom of screen
-* ndLin > nDocLin          // Not at bottom of document
-* LenLin(ndLin + 1) < nCol // No Text Directly Below Cursor
-* nTopLin' = nTopLin + 1   // Scroll down screen
-* nLin' = nLin             // No change
-* nCol' = LenLin(ndLin + 1)// Move to end of line below
+```python
+nLin = mWinLin            // At bottom of screen
+ndLin > nDocLin           // Not at bottom of document
+LenLin(ndLin + 1) < nCol  // No Text Directly Below Cursor
+nTopLin = nTopLin + 1     // Scroll down screen
+nLin = nLin               // No change
+nCol = LenLin(ndLin + 1)  // Move to end of line below
+```
 
 #### Bottom of Document
-* nLin = mWinLin           // At bottom of screen
-* ndLin = nDocLin          // At bottom of document
-* nTopLin' = nTopLin       // No change
-* nLin' = nLin             // No change
-* nCol' = nCol             // No change
+```python
+nLin = mWinLin            // At bottom of screen
+ndLin = nDocLin           // At bottom of document
+nTopLin = nTopLin         // No change
+nLin = nLin               // No change
+nCol = nCol               // No change
+```
 
 ### Up Key
 
 #### Normal
-* nLin > 1                 // Not at top of screen
-* ndLin > 1                // Not at top of document
-* LenLin(ndLin - 1) >= nCol// Text directly above cursor
-* nTopLin' = nTopLin       // No Scroll
-* nLin' = nLin - 1         // Move up one line
-* nCol' = nCol             // No change
+```python
+nLin > 1                  // Not at top of screen
+ndLin > 1                 // Not at top of document
+LenLin(ndLin - 1) >= nCol // Text directly above cursor
+nTopLin = nTopLin         // No Scroll
+nLin = nLin - 1           // Move up one line
+nCol = nCol               // No change
+```
 
 #### No Text Above Cursor
 ```python
-nLin > 1                 // Not at top of screen
-ndLin > 1                // Not at top of document
-LenLin(ndLin - 1) < nCol // No text directly above cursor
-nTopLin\' = nTopLin       // No Scroll
-nLin\' = nLin - 1         // Move up one line
-nCol\' = LenLin(ndLin - 1)// Move to end of line above
+nLin > 1                  // Not at top of screen
+ndLin > 1                 // Not at top of document
+LenLin(ndLin - 1) < nCol  // No text directly above cursor
+nTopLin = nTopLin         // No Scroll
+nLin = nLin - 1           // Move up one line
+nCol = LenLin(ndLin - 1)  // Move to end of line above
 ```

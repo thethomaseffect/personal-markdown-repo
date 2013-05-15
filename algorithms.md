@@ -9,7 +9,7 @@ Algorithms Exam TODO and Revision:
 *  Prove that, for any sorting algorithm applied to a list of length n, the worst case complexity is
 proportional to nlog2n.
 * Show worse case complexity for recursive algorithm in 5 (a).
-* State conditions for valid recursive function definition.* State why recursive function for weighted graph is valid and what it does. Evaluate the function for given letters.
+* State conditions for valid recursive function definition. State why recursive function for weighted graph is valid and what it does. Evaluate the function for given letters.
 * State why the function definition is valid for 4 (d) and what it does. Evaluate it a few times. Change it and say what would happen.
 
 # Revision

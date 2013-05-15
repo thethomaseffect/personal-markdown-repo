@@ -111,7 +111,7 @@ We wish to formally specify the cursor control operation of a basic text editor 
 nLin > 1                 // Not at top of screen
 ndLin > 1                // Not at top of document
 LenLin(ndLin - 1) < nCol // No text directly above cursor
-nTopLin' = nTopLin       // No Scroll
-nLin' = nLin - 1         // Move up one line
-nCol' = LenLin(ndLin - 1)// Move to end of line above
+nTopLin\' = nTopLin       // No Scroll
+nLin\' = nLin - 1         // Move up one line
+nCol\' = LenLin(ndLin - 1)// Move to end of line above
 ```

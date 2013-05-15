@@ -53,7 +53,7 @@ We wish to formally specify the cursor control operation of a basic text editor 
 
 ### Down Key
 
-__NOTE:*** Any assignments should have a ' sybol on the left side of the assignment in the exam. I've left this out below so it doesn't screw with markdown's syntax highlighting.__
+__NOTE: Any assignments should have a ' symbol on the left side of the assignment in the exam. I've left this out below so it doesn't screw with markdown's syntax highlighting.__
 
 #### Normal
 ```python

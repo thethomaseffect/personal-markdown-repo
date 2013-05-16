@@ -56,48 +56,77 @@ We wish to formally specify the cursor control operation of a basic text editor 
 * Cursor moves up one line?
 * Cursor warps to end of line above?
 
+## Sample Answers
+
 ### Down Key
 
 __NOTE: Any assignments should have a ' symbol on the left side of the assignment in the exam. I've left this out below so it doesn't screw with markdown's syntax highlighting.__
 
+TOTAL CONDITIONS: 7 for full up, down. 5 for full right, left.
+
 #### Normal
 ```python
 nLin < mWinLin            # Not at bottom of screen
-ndLin > nDocLin           # Not at bottom of document
 LenLin(ndLin + 1) >= nCol # Text in line below
-nTopLin = nTopLin         # No Scroll
+nTopLin = nTopLin         # No Vertical Scroll
+nLeftCol = nLeftCol       # No Horizontal Scroll
 nLin = nLin + 1           # Go down one line
 nCol = nCol               # No change
 ```
 
-#### No Text Directly Below
+#### No Text Directly Below, No Hori Scroll
 ```python
 nLin < mWinLin            # Not at bottom of screen
-ndLin > nDocLin           # Not at bottom of document
 LenLin(ndLin + 1) < nCol  # No Text Directly Below Cursor
+LenLin(ndLin +1) >= nLeftCol # End of line below is on the screen
 nTopLin = nTopLin         # No Scroll
+nLeftCol = nLeftCol       # No Horizontal Scroll
 nLin = nLin + 1           # Go down one line
-nCol = LenLin(ndLin + 1)  # Move to end of line below
+nCol = LenLin(ndLin + 1) - (nLeftCol - 1)  # Move to end of line below
 ```
 
-#### Bottom of Screen, Text below
+### Move to End of Line Below, Hori Scroll
+```python
+nLin < mWinLin            # Not at bottom of screen
+LenLin(ndLin + 1) < nLeftCol  # No Text Directly Below Cursor
+nTopLin = nTopLin         # No Scroll
+nLeftCol = LenLin(ndLin + 1)       # Scroll to end of line below in first screen col position.
+nLin = nLin + 1           # Go down one line
+nCol = 1                  # Move to left of screen
+```
+
+#### Bottom of Screen, Text below, No Hori Scroll
 ```python
 nLin = mWinLin            # At bottom of screen
 ndLin > nDocLin           # Not at bottom of document
 LenLin(ndLin + 1) >= nCol # Text in line below
 nTopLin = nTopLin + 1     # Scroll down screen
+nLeftCol = nLeftCol       # No change
 nLin = nLin               # No change
 nCol = nCol               # No change
 ```
 
-#### Bottom of Screen, No Text Below
+#### Bottom of Screen, Move to End of Line Below, No Hori Scroll
 ```python
 nLin = mWinLin            # At bottom of screen
 ndLin > nDocLin           # Not at bottom of document
-LenLin(ndLin + 1) < nCol  # No Text Directly Below Cursor
+LenLin(ndLin + 1) < ndCol # No Text Directly Below Cursor
+LenLin(ndLin + 1) >= nLeftCol # End of line below on screen
 nTopLin = nTopLin + 1     # Scroll down screen
+nLeftCol = nLeftCol       # No change
 nLin = nLin               # No change
-nCol = LenLin(ndLin + 1)  # Move to end of line below
+nCol = LenLin(ndLin + 1)-(nLeftCol - 1)  # Move to end of line below
+```
+
+#### Bottom of Screen, Move to End of Line Below, Hori Scroll
+```python
+nLin = mWinLin            # At bottom of screen
+ndLin > nDocLin           # Not at bottom of document
+LenLin(ndLin + 1) < nLeftCol # End of line below not on screen
+nTopLin = nTopLin + 1     # Scroll down screen
+nLeftCol = LenLin(ndLin + 1) # Scroll to end of line below in first screen somumn position.
+nLin = nLin               # No change
+nCol = 1                  # Move to left of screen
 ```
 
 #### Bottom of Document
@@ -105,6 +134,7 @@ nCol = LenLin(ndLin + 1)  # Move to end of line below
 nLin = mWinLin            # At bottom of screen
 ndLin = nDocLin           # At bottom of document
 nTopLin = nTopLin         # No change
+nLeftCol = nLeftCol       # No change
 nLin = nLin               # No change
 nCol = nCol               # No change
 ```

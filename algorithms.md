@@ -15,6 +15,8 @@ proportional to nlog2n.
 
 ## Tower of Hanoi formal algorithm in English:
 
+__The Tower of Hanoi recursive function is valid because it contains the stopping condition of n=1, and each self-reference reduces n by 1 so the stopping condition will be reached after a finite number of steps.
+
 Remember that in his example the letters used for the piles and the letter he uses to represent the stack positions are the same. This confused me for ages so I'm gonna use a, b and c for the piles and x, y and z for the peg position. When you do it out you should use x,y,z for the piles, but for explaining the algorithm it's easier to use a,b,c for now!
 
 __Formal algorithm for Tn:__
@@ -57,3 +59,26 @@ If you're worried you missed a step, the total final moves is always 2 to the po
 * # - Returns the length of a list eg. #[1,2,3] -> 3
 
 Lists are denoted using uppercase and elements lowercase.
+
+Other common representations include:
+* MG - Merge Sort
+* S - Sort
+* GCD - Greatest common denominator
+
+
+## Valid Recursive Function Definition
+
+A recursive function is one which contains a self-reference. A valid recursive function must have a non-self referencing stopping condition and must reach this stopping condition after a finite number of steps.
+
+
+## Graph Traversing Algorithm
+
+This function definition is valid because there is a stopping condition and each self reference reduces the number of nodes in the graph by 1, so it will be reached in a finite number of steps.
+
+The algorithm checks is there is a path between x and y in the graph G.
+
+Plain English Representation:
+
+The algorithm progresses by removing each node it comes in contact with from the graph and then continues with the children. The easiest way to keep track of path is with numbers for which path you are on eg. 111,112,1121.
+
+Basically, start from the origin, get the children and use them to continue. If there's no child that hasn't already been visited stop because false. If the child ends up being the goal return true and backtrack to demonstrate this.

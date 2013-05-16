@@ -9,10 +9,11 @@ We wish to formally specify the cursor control operation of a basic text editor 
 
 ### Variables
 
-* ***nTopLin*** - Used to denote screen position. Increments when scrolling down and decrements when scrolling up.
+* ***nTopLin*** - Used to denote vertical screen position. Increments when scrolling down and decrements when scrolling up.
+* ***nLeftCol*** - Used to denote horizontal screen position. Increments when scrolling right
 * ***nDocLin*** - Bottom line of document
 * ***nCol*** - The horizontal position of the cursor relative to the screen width. It can never be greater than mWinCol.
-* ***ndCol*** - The horizontal position of the cursor relative to the document. Since there is no horizontal scroll, it is always the same as nCol.
+* ***ndCol*** - The horizontal position of the cursor relative to the document. Equal to ***nLeftCol**** + ***nCol***.
 * ***nLin*** - Current line on screen relative to screen position. It cannot be greater than mWinLin.
 * ***ndLin*** - Current line on the document independent of screen position. Cannot be greater than nDocLin.
 
@@ -24,6 +25,7 @@ We wish to formally specify the cursor control operation of a basic text editor 
 * At bottom of document?
 * Text below cursor?
 * Screen scrolls down?
+* Screen scrolls horizontally?
 * Cursor moves down one line?
 * Cursor moves to end of line below?
 
@@ -32,6 +34,7 @@ We wish to formally specify the cursor control operation of a basic text editor 
 * At top of document?
 * Text above cursor?
 * Screen scrolls up?
+* Screen scrolls horizontally?
 * Cursor moves up one line?
 * Cursor moves to end of line above?
 
@@ -40,6 +43,7 @@ We wish to formally specify the cursor control operation of a basic text editor 
 * At right end of line?
 * At end of document?
 * Screen scrolls down?
+* Screen scrolls horizontally?
 * Cursor moves down one line?
 * Cursor warps to start of next line?
 
@@ -48,6 +52,7 @@ We wish to formally specify the cursor control operation of a basic text editor 
 * At left end of line?
 * At top of document?
 * Screen scrolls up?
+* Screen scrolls horizontally?
 * Cursor moves up one line?
 * Cursor warps to end of line above?
 

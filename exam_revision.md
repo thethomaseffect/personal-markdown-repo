@@ -130,3 +130,54 @@ nTopLin = nTopLin         # No Scroll
 nLin = nLin - 1           # Move up one line
 nCol = LenLin(ndLin - 1)  # Move to end of line above
 ```
+### Right Key
+
+#### Normal
+```python
+ndCol < LenLin(ndLin)     # Not at end of current line
+nCol < mWinCol            # Not at right of screen
+nCol = nCol + 1           # Cursor moves right
+nLin = nLin               # No change
+nTopLin = nTopLin         # No change
+nLeftCol = nLeftCol       # No Change
+```
+#### Same Line, Horizontal Scroll Right
+```python
+ndCol < LenLin(ndLin)     # Not at end of current line
+nCol = mWinCol            # At right of screen
+nCol = mWinCol            # No change
+nLin = nLin               # No change
+nTopLin = nTopLin         # No change
+nLeftCol = 1              # Scroll screen right
+```
+
+#### End of Line and Screen, Move Down and Scroll Left
+```python
+ndCol = LenLin(ndLin)     # At end of current line
+ndLin < nDocLin           # Not at bottom of document
+nLin < mWinLin            # Not at bottom of screen
+nCol = 1                  # Cursor moves to the left side
+nLin = nLin + 1           # Moves down one line
+nTopLin = nTopLin         # No vertical scroll
+nLeftCol = 1              # Scroll left
+```
+#### End of Line at left and bottom of screen, Scroll Left and Down
+```python
+ndCol = LenLin(ndLin)     # At end of current line
+ndLin < nDocLin           # Not at end of document
+nLin = mWinLin            # At bottom of screen
+nCol = 1                  # Cursor moves to left side
+nLin = nLin               # No change
+nTopLin = nTopLin + 1     # Scroll down
+nLeftCol = 1              # Scroll left
+```
+
+#### End of document
+```python
+ndCol = LenLin(ndLin)     # At end of current line
+ndLin = nDocLin           # At bottom of document
+nCol = nCol               # No change
+nLin = nLin               # No change
+nTopLin = nTopLin         # No change
+nLeftCol = nLeftCol       # No change
+```

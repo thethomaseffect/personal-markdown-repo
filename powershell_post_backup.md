@@ -1,4 +1,4 @@
-ing CSharp (C#) code in Powershell scripts
+Using CSharp (C#) code in Powershell scripts
 ============================================
 
 
@@ -21,21 +21,21 @@ using System;
 
 namespace StefanG.Tools
 {
-        public static class CDRemoteTimeout
-            {
-                        public static void Get()
-                                {
-                                                ContentDeploymentConfiguration cdconfig = ContentDeploymentConfiguration.GetInstance();
-                                                            Console.WriteLine("Remote Timeout: "+cdconfig.RemoteTimeout);
-                                                                    }
+    public static class CDRemoteTimeout
+    {
+        public static void Get()
+        {
+            ContentDeploymentConfiguration cdconfig = ContentDeploymentConfiguration.GetInstance();
+            Console.WriteLine("Remote Timeout: "+cdconfig.RemoteTimeout);
+        }
 
-                                                                            public static void Set(int seconds)
-                                                                                    {
-                                                                                                    ContentDeploymentConfiguration cdconfig = ContentDeploymentConfiguration.GetInstance();
-                                                                                                                cdconfig.RemoteTimeout = seconds;
-                                                                                                                            cdconfig.Update();
-                                                                                                                                    }
-                                                                                                                                        }
+        public static void Set(int seconds)
+        {
+            ContentDeploymentConfiguration cdconfig = ContentDeploymentConfiguration.GetInstance();
+            cdconfig.RemoteTimeout = seconds;
+            cdconfig.Update();
+        }
+    }
 }
 ```
 
@@ -63,8 +63,8 @@ For the above listed C# example the final powershell script - would look like th
 ```powershell
 $Assem = (
     "Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" ,
-        "Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"
-            )
+    "Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"
+    )
 
 $Source = @"
 using Microsoft.SharePoint.Publishing.Administration;
@@ -72,21 +72,21 @@ using System;
 
 namespace StefanG.Tools
 {
-        public static class CDRemoteTimeout
-            {
-                        public static void Get()
-                                {
-                                                ContentDeploymentConfiguration cdconfig = ContentDeploymentConfiguration.GetInstance();
-                                                            Console.WriteLine("Remote Timeout: "+cdconfig.RemoteTimeout);
-                                                                    }
+    public static class CDRemoteTimeout
+    {
+        public static void Get()
+        {
+            ContentDeploymentConfiguration cdconfig = ContentDeploymentConfiguration.GetInstance();
+            Console.WriteLine("Remote Timeout: "+cdconfig.RemoteTimeout);
+        }
 
-                                                                            public static void Set(int seconds)
-                                                                                    {
-                                                                                                    ContentDeploymentConfiguration cdconfig = ContentDeploymentConfiguration.GetInstance();
-                                                                                                                cdconfig.RemoteTimeout = seconds;
-                                                                                                                            cdconfig.Update();
-                                                                                                                                    }
-                                                                                                                                        }
+        public static void Set(int seconds)
+        {
+            ContentDeploymentConfiguration cdconfig = ContentDeploymentConfiguration.GetInstance();
+            cdconfig.RemoteTimeout = seconds;
+            cdconfig.Update();
+        }
+    }
 }
 "@
 

@@ -93,10 +93,10 @@ namespace StefanG.Tools
 Add-Type -ReferencedAssemblies $Assem -TypeDefinition $Source -Language CSharp
 ```
 
+The last lines demonstrate how to call the C# methods from Powershell.
 
-```shell
+```powershell
 [StefanG.Tools.CDRemoteTimeout]::Get()
 [StefanG.Tools.CDRemoteTimeout]::Set(600)
 ```
 
-The last lines in the above listed sample demonstrates how to call the C# methods from Powershell.

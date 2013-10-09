@@ -96,7 +96,7 @@ Add-Type -ReferencedAssemblies $Assem -TypeDefinition $Source -Language CSharp
 The last lines demonstrate how to call the C# methods from Powershell.
 
 
-\[StefanG.Tools.CDRemoteTimeout]::Get()
-\[StefanG.Tools.CDRemoteTimeout]::Set(600)
+    [StefanG.Tools.CDRemoteTimeout]::Get()
+    [StefanG.Tools.CDRemoteTimeout]::Set(600)
 
 

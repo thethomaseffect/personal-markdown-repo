@@ -94,7 +94,7 @@ Add-Type -ReferencedAssemblies $Assem -TypeDefinition $Source -Language CSharp
 ```
 
 
-```powershell
+```shell
 [StefanG.Tools.CDRemoteTimeout]::Get()
 [StefanG.Tools.CDRemoteTimeout]::Set(600)
 ```

@@ -293,29 +293,29 @@ nLeftCol = nLeftCol - 1                    # Scroll screen left
 
 #### Start of Line and Screen, Move Up and Scroll Right
 ```python
-ndCol = LenLin(ndLin)                      # At end of current line
-ndLin < nDocLin                            # Not at bottom of document
-nLin < mWinLin                             # Not at bottom of screen
-nCol = 1                                   # Cursor moves to the left side
-nLin = nLin + 1                            # Moves down one line
+ndCol = 1                                  # At start of current line
+ndLin > 1                                  # Not at top of document
+nLin > 1                                   # Not at top of screen
+nCol = 1                                   # Cursor moves to first column
+nLin = nLin - 1                            # Moves up one line
 nTopLin = nTopLin                          # No vertical scroll
-nLeftCol = 1                               # Scroll left
+nLeftCol = LenLin(ndLin - 1)               # Cursor moves to end of line above
 ```
 #### End of Line at left and bottom of screen, Scroll Left and Down
 ```python
-ndCol = LenLin(ndLin)                      # At end of current line
+ndCol = 1                                  # At start of current line
 ndLin < nDocLin                            # Not at end of document
 nLin = mWinLin                             # At bottom of screen
 nCol = 1                                   # Cursor moves to left side
 nLin = nLin                                # No change
-nTopLin = nTopLin + 1                      # Scroll down
-nLeftCol = 1                               # Scroll left
+nTopLin = nTopLin - 1                      # Scroll up
+nLeftCol = LenLin(ndLin - 1)               # Cursor moves to end of line above
 ```
 
 #### End of document
 ```python
-ndCol = LenLin(ndLin)                      # At end of current line
-ndLin = nDocLin                            # At bottom of document
+ndCol = 1                                  # At start of current line
+ndLin = 1                                  # At top of document
 nCol = nCol                                # No change
 nLin = nLin                                # No change
 nTopLin = nTopLin                          # No change

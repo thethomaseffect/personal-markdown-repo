@@ -2,6 +2,7 @@ Money Well Spent
 ================
 
 _A Short Story for Engineers_
+
 You don’t have to be an engineer to appreciate this story.
 
 A toothpaste factory had a problem: Due to the way the production line was set up, sometimes empty boxes were shipped without the tube inside. People with experience in designing production lines will tell you how difficult it is to have everything happen with timings so precise that every single unit coming off of it is perfect 100% of the time. Small variations in the environment (which cannot be controlled in a cost-effective fashion) mean quality assurance checks must be smartly distributed across the production line so that customers all the way down to the supermarket won’t get frustrated and purchase another product instead. 
@@ -18,7 +19,8 @@ Perplexed, the CEO traveled down to the factory and walked up to the part of the
 
 $8 million vs $20    Hmmm! Money well spent?
 
- - author unknown
+ Author Unknown
 
  [Original Source](http://cs.txstate.edu/~br02/cs1428/ShortStoryForEngineers.htm)
+ 
  Markdown version by @thethomaseffect because the original made my eyes sad and I wanted to link this to friends.

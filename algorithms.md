@@ -16,7 +16,7 @@ proportional to nlog2n.
 
 ## Tower of Hanoi formal algorithm in English:
 
-__The Tower of Hanoi recursive function is valid because it contains the stopping condition of n=1, and each self-reference reduces n by 1 so the stopping condition will be reached after a finite number of steps.
+*The Tower of Hanoi recursive function is valid because it contains the stopping condition of n=1, and each self-reference reduces n by 1 so the stopping condition will be reached after a finite number of steps.*
 
 Remember that in his example the letters used for the piles and the letter he uses to represent the stack positions are the same. This confused me for ages so I'm gonna use a, b and c for the piles and x, y and z for the peg position. When you do it out you should use x,y,z for the piles, but for explaining the algorithm it's easier to use a,b,c for now!
 
@@ -57,7 +57,7 @@ If you're worried you missed a step, the total final moves is always 2 to the po
 * lst - Returns the last item in a list eg. tl[1,2,3] -> 3
 * tl - Takes a list and returns it without it's first item eg. lst[1,2,3] -> [2,3]
 * init - Takes a list and returns it without it's last item eg. lst[1,2,3] -> [1,2]
-* # - Returns the length of a list eg. #[1,2,3] -> 3
+* \# - Returns the length of a list eg. #[1,2,3] -> 3
 
 Lists are denoted using uppercase and elements lowercase.
 
